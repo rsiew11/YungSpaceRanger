@@ -1,0 +1,17 @@
+[?1049h[1;61r(B[m[4l[?7h[H[2J(0[0mlqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk(B
+(0[0mx(B    Time:[18Gn/a[2;45H(0[0mx(B
+(0[0mx(B    Latitude:   n/a[3;45H(0[0mx(B
+(0[0mx(B    Longitude:  n/a[4;45H(0[0mx(B
+(0[0mx(B    Altitude:   n/a[5;45H(0[0mx(B
+(0[0mx(B    Speed:[18Gn/a[6;45H(0[0mx(B
+(0[0mx(B    Heading:    n/a[7;45H(0[0mx(B
+(0[0mx(B    Climb:[18Gn/a[8;45H(0[0mx(B
+(0[0mx(B    Status:     NO FIX (0 secs)[9;45H(0[0mx(B
+(0[0mx(B    Longitude Err:   n/a[10;45H(0[0mx(B
+(0[0mx(B    Latitude Err:    n/a[11;45H(0[0mx(B
+(0[0mx(B    Altitude Err:    n/a[12;45H(0[0mx(B
+(0[0mx(B    Course Err:[23Gn/a[13;45H(0[0mx(B
+(0[0mx(B    Speed Err:[23Gn/a[14;45H(0[0mx(B
+(0[0mx(B    Time offset:     n/a[15;45H(0[0mx(B
+(0[0mx(B    Grid Square:     n/a[16;45H(0[0mx(B
+(0[0mmqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj(B[A(0[0m(B[1;46H(0[0mlqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk(B[2;46H(0[0mx(BPRN:   Elev:  Azim:  SNR:  Used: (0[0mx(B[3;46H(0[0mx(B[3;80H(0[0mx(B[4;46H(0[0mx(B[4;80H(0[0mx(B[5;46H(0[0mx(B[5;80H(0[0mx(B[6;46H(0[0mx(B[6;80H(0[0mx(B[7;46H(0[0mx(B[7;80H(0[0mx(B[8;46H(0[0mx(B[8;80H(0[0mx(B[9;46H(0[0mx(B[9;80H(0[0mx(B[10;46H(0[0mx(B[10;80H(0[0mx(B[11;46H(0[0mx(B[11;80H(0[0mx(B[12;46H(0[0mx(B[12;80H(0[0mx(B[13;46H(0[0mx(B[13;80H(0[0mx(B[14;46H(0[0mx(B[14;80H(0[0mx(B[15;46H(0[0mx(B[15;80H(0[0mx(B[16;46H(0[0mx(B[16;80H(0[0mx(B[17;46H(0[0mmqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj(B[2;79H(0[0m(B[18d[16;45H[2;79H[18d[16;45H[2;79H[18d[61;1H[?1049l[?1l>[61d
