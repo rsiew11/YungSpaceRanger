@@ -6,7 +6,6 @@ import pandas
 output_directory = "/afs/andrew.cmu.edu/usr23/npmurali/private/18500/YungSpaceRanger/opensmile-2.3.0/soccerfield/output"
 coefficient_names = []
 
-
 def create_average_file(filename):
     avg_dict = dict()
     global coefficient_names
@@ -36,12 +35,6 @@ def dict_to_value_array(mydict):
     for key in keylist:
         result.append(mydict[key])
     return result
-                
-def add_to_final_csv(filename, avg_dict):
-    with open('allfiles_output.csv', 'wb') as csv_file:
-        writer = csv.writer(csv_file)
-        for key, value in avg_dict.items():
-            writer.writerow([key, value])
 
 
 def parsefiles():
@@ -66,9 +59,5 @@ def classify():
     df = pandas.read_csv('all_output.csv')
     print df
 
-
-
-
 if __name__ == "__main__":
     classify()
-
