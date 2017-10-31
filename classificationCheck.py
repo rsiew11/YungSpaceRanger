@@ -1,9 +1,9 @@
 
-def classify(csv,wav):
+def classify(csv):
     fd = open(str(csv),"r+")
     data = fd.readlines()
     fd.close()
-    
+
     numFiles = len(data)
 
     findyDict = {}
@@ -13,7 +13,7 @@ def classify(csv,wav):
         val = int(data[i][comma+1])
         findyDict[key] = val
 
-    return findyDict[str(wav)]
+    return findyDict
 
 
 
