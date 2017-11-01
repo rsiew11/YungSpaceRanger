@@ -3,6 +3,14 @@ import os
 import pandas
 import csv
 from sklearn import svm
+from sklearn import linear_model
+from sklearn.neighbors.kde import KernelDensity
+from sklearn.feature_extraction.text import CountVectorizer
+
+
+from sklearn.feature_extraction.text import TfidfTransformer
+
+from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
 
 # The absolute path of the wav file we wnat to predict if a human voice or not
@@ -19,15 +27,15 @@ coefficients = ["pcm_fftMag_mfcc[0]", "pcm_fftMag_mfcc[1]", "pcm_fftMag_mfcc[2]"
         "pcm_fftMag_mfcc[3]", "pcm_fftMag_mfcc[4]", "pcm_fftMag_mfcc[5]",
         "pcm_fftMag_mfcc[6]", "pcm_fftMag_mfcc[7]", "pcm_fftMag_mfcc[8]",
         "pcm_fftMag_mfcc[9]", "pcm_fftMag_mfcc[10]", "pcm_fftMag_mfcc[11]",
-        "pcm_fftMag_mfcc[12]"]
-""""pcm_fftMag_mfcc_de[0]"]
+        "pcm_fftMag_mfcc[12]",
+"pcm_fftMag_mfcc_de[0]",
         "pcm_fftMag_mfcc_de[1]", "pcm_fftMag_mfcc_de[2]",
         "pcm_fftMag_mfcc_de[3]", "pcm_fftMag_mfcc_de[4]",
         "pcm_fftMag_mfcc_de[5]", "pcm_fftMag_mfcc_de[6]",
         "pcm_fftMag_mfcc_de[7]", "pcm_fftMag_mfcc_de[8]",
         "pcm_fftMag_mfcc_de[9]", "pcm_fftMag_mfcc_de[10]",
         "pcm_fftMag_mfcc_de[11]", "pcm_fftMag_mfcc_de[12]"]
-pcm_fftMag_mfcc_de_de[0]", "pcm_fftMag_mfcc_de_de[1]",
+"""pcm_fftMag_mfcc_de_de[0]", "pcm_fftMag_mfcc_de_de[1]",
         "pcm_fftMag_mfcc_de_de[2]", "pcm_fftMag_mfcc_de_de[3]",
         "pcm_fftMag_mfcc_de_de[4]", "pcm_fftMag_mfcc_de_de[5]",
         "pcm_fftMag_mfcc_de_de[6]", "pcm_fftMag_mfcc_de_de[7]",
@@ -152,18 +160,33 @@ def matrix_from_csv( single_output ):
         if "pcm" not in coeff:
             continue
         matrix.append(float(avg_dict[coeff]))
-    return [matrix[0:13]]
+    return [matrix[0:26]]
 
 # function that creates a classifier and tests on a sample
 def classify( single_output ):
     total_data, targets = create_single_output()
     df = pandas.read_csv(total_data, usecols=coefficients)
-    clf = svm.SVC(gamma=0.001, C=100.)
+
+    vectorizer = TfidfVectorizer(min_df=1)
+    counter = CountVectorizer(min_df=1)
+
+
+    #x_train=vectorizer.fit_transform(df.values.ravel())
+    clf = KernelDensity(kernel='gaussian', bandwidth=0.2)
+    #clf = svm.SVC(C=200000000, tol=1e-10, cache_size=600, kernel='rbf', gamma='auto',
+    #                  class_weight='balanced')
+
+    #clf = linear_model.LogisticRegression()
     print targets
-    clf.fit(df.values, targets)
+    #clf.fit(df.values, targets)
+    print df.values
+
     matrix = matrix_from_csv(single_output)
+    clf.fit(matrix)
+    print clf.score(matrix)
+    #x_test=vectorizer.fit_transform(matrix)
     print matrix
-    print clf.predict(matrix)
+    #print clf.predict(matrix)
 
 
 if __name__ == "__main__":
