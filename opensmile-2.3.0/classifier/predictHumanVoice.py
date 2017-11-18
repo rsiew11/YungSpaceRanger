@@ -52,5 +52,7 @@ if __name__ == "__main__":
     # need absolute paths to files and folders
     training_folder = os.path.abspath(args.training_folder)
     target_file = os.path.abspath(args.target_file)
-    predict_file = os.path.abspath(args.predict_file)
-    classify( predict_file )
+    while True:
+        print "Type the path of the file!"
+        predict_file = os.path.abspath(raw_input())
+        classify( predict_file )
