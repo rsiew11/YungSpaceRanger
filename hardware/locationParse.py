@@ -1,7 +1,7 @@
 import math
 
 #open the text file for the location
-fo = open("gpsLocation.txt", "r+")
+fo = open("packet/gpsLocation.txt", "r+")
 
 #longitude = fo.read()
 #latitude = fo.read()
