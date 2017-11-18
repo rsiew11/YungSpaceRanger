@@ -17,10 +17,10 @@
 /* #undef HAVE_OPENCV */
 
 /* Compile with portaudio support */
-#define HAVE_PORTAUDIO 1
+/* #undef HAVE_PORTAUDIO */
 
 /* Detected portaudio has newer V19 api */
-#define HAVE_PORTAUDIO_V19 1
+/* #undef HAVE_PORTAUDIO_V19 */
 
 /* Define if you have POSIX threads libraries and header files. */
 #define HAVE_PTHREAD 1
@@ -46,12 +46,8 @@
 /* Define to 1 if you have the <unistd.h> header file. */
 #define HAVE_UNISTD_H 1
 
-/* Define to the sub-directory in which libtool stores uninstalled libraries.
-   */
+/* Define to the sub-directory where libtool stores uninstalled libraries. */
 #define LT_OBJDIR ".libs/"
-
-/* Define to 1 if your C compiler doesn't accept -c and -o together. */
-/* #undef NO_MINUS_C_MINUS_O */
 
 /* Name of package */
 #define PACKAGE "opensmile"
@@ -88,10 +84,10 @@
 #define WITH_LIVEREC 1
 
 /* No getline implementation on Mac */
-/* #undef __HAVENT_GNULIBS */
+#define __HAVENT_GNULIBS 1
 
 /* Compile on Macs */
-/* #undef __MACOS */
+#define __MACOS 1
 
 /* Compile on MinGW32-Msys */
 /* #undef __MINGW */
