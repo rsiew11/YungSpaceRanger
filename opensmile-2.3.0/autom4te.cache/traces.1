@@ -1,13 +1,13 @@
-m4trace:aclocal.m4:1072: -1- m4_include([m4/android.m4])
-m4trace:aclocal.m4:1073: -1- m4_include([m4/find_pthread.m4])
-m4trace:aclocal.m4:1074: -1- m4_include([m4/libtool.m4])
-m4trace:aclocal.m4:1075: -1- m4_include([m4/ltoptions.m4])
-m4trace:aclocal.m4:1076: -1- m4_include([m4/ltsugar.m4])
-m4trace:aclocal.m4:1077: -1- m4_include([m4/ltversion.m4])
-m4trace:aclocal.m4:1078: -1- m4_include([m4/lt~obsolete.m4])
-m4trace:aclocal.m4:1079: -1- m4_include([m4/opencv.m4])
-m4trace:aclocal.m4:1080: -1- m4_include([m4/portaudio.m4])
-m4trace:aclocal.m4:1081: -1- m4_include([m4/targets.m4])
+m4trace:aclocal.m4:1153: -1- m4_include([m4/android.m4])
+m4trace:aclocal.m4:1154: -1- m4_include([m4/find_pthread.m4])
+m4trace:aclocal.m4:1155: -1- m4_include([m4/libtool.m4])
+m4trace:aclocal.m4:1156: -1- m4_include([m4/ltoptions.m4])
+m4trace:aclocal.m4:1157: -1- m4_include([m4/ltsugar.m4])
+m4trace:aclocal.m4:1158: -1- m4_include([m4/ltversion.m4])
+m4trace:aclocal.m4:1159: -1- m4_include([m4/lt~obsolete.m4])
+m4trace:aclocal.m4:1160: -1- m4_include([m4/opencv.m4])
+m4trace:aclocal.m4:1161: -1- m4_include([m4/portaudio.m4])
+m4trace:aclocal.m4:1162: -1- m4_include([m4/targets.m4])
 m4trace:configure.ac:2: -1- AC_INIT([openSMILE], [2.3.0])
 m4trace:configure.ac:2: -1- m4_pattern_forbid([^_?A[CHUM]_])
 m4trace:configure.ac:2: -1- m4_pattern_forbid([_AC_])
@@ -158,7 +158,7 @@ m4trace:configure.ac:2: -1- AC_SUBST_TRACE([target_alias])
 m4trace:configure.ac:2: -1- m4_pattern_allow([^target_alias$])
 m4trace:configure.ac:4: -1- AM_INIT_AUTOMAKE
 m4trace:configure.ac:4: -1- m4_pattern_allow([^AM_[A-Z]+FLAGS$])
-m4trace:configure.ac:4: -1- AM_AUTOMAKE_VERSION([1.13.4])
+m4trace:configure.ac:4: -1- AM_AUTOMAKE_VERSION([1.15])
 m4trace:configure.ac:4: -1- AC_REQUIRE_AUX_FILE([install-sh])
 m4trace:configure.ac:4: -1- AC_SUBST([INSTALL_PROGRAM])
 m4trace:configure.ac:4: -1- AC_SUBST_TRACE([INSTALL_PROGRAM])
@@ -292,6 +292,7 @@ m4trace:configure.ac:8: -1- m4_pattern_allow([^EXEEXT$])
 m4trace:configure.ac:8: -1- AC_SUBST([OBJEXT], [$ac_cv_objext])
 m4trace:configure.ac:8: -1- AC_SUBST_TRACE([OBJEXT])
 m4trace:configure.ac:8: -1- m4_pattern_allow([^OBJEXT$])
+m4trace:configure.ac:8: -1- AC_REQUIRE_AUX_FILE([compile])
 m4trace:configure.ac:8: -1- AC_SUBST([DEPDIR], ["${am__leading_dot}deps"])
 m4trace:configure.ac:8: -1- AC_SUBST_TRACE([DEPDIR])
 m4trace:configure.ac:8: -1- m4_pattern_allow([^DEPDIR$])
@@ -462,8 +463,7 @@ m4trace:configure.ac:10: -1- m4_pattern_allow([^RANLIB$])
 m4trace:configure.ac:10: -1- m4_pattern_allow([LT_OBJDIR])
 m4trace:configure.ac:10: -1- AC_DEFINE_TRACE_LITERAL([LT_OBJDIR])
 m4trace:configure.ac:10: -1- m4_pattern_allow([^LT_OBJDIR$])
-m4trace:configure.ac:10: -1- AH_OUTPUT([LT_OBJDIR], [/* Define to the sub-directory in which libtool stores uninstalled libraries.
-   */
+m4trace:configure.ac:10: -1- AH_OUTPUT([LT_OBJDIR], [/* Define to the sub-directory where libtool stores uninstalled libraries. */
 @%:@undef LT_OBJDIR])
 m4trace:configure.ac:10: -1- LT_SUPPORTED_TAG([CC])
 m4trace:configure.ac:10: -1- AC_SUBST([MANIFEST_TOOL])
@@ -484,6 +484,9 @@ m4trace:configure.ac:10: -1- m4_pattern_allow([^OTOOL$])
 m4trace:configure.ac:10: -1- AC_SUBST([OTOOL64])
 m4trace:configure.ac:10: -1- AC_SUBST_TRACE([OTOOL64])
 m4trace:configure.ac:10: -1- m4_pattern_allow([^OTOOL64$])
+m4trace:configure.ac:10: -1- AC_SUBST([LT_SYS_LIBRARY_PATH])
+m4trace:configure.ac:10: -1- AC_SUBST_TRACE([LT_SYS_LIBRARY_PATH])
+m4trace:configure.ac:10: -1- m4_pattern_allow([^LT_SYS_LIBRARY_PATH$])
 m4trace:configure.ac:10: -1- AH_OUTPUT([HAVE_DLFCN_H], [/* Define to 1 if you have the <dlfcn.h> header file. */
 @%:@undef HAVE_DLFCN_H])
 m4trace:configure.ac:10: -1- AC_SUBST([CPP])
@@ -532,12 +535,10 @@ m4trace:configure.ac:10: -1- m4_pattern_allow([^CXXCPP$])
 m4trace:configure.ac:10: -1- AC_SUBST([LD])
 m4trace:configure.ac:10: -1- AC_SUBST_TRACE([LD])
 m4trace:configure.ac:10: -1- m4_pattern_allow([^LD$])
+m4trace:configure.ac:10: -1- AC_SUBST([LT_SYS_LIBRARY_PATH])
+m4trace:configure.ac:10: -1- AC_SUBST_TRACE([LT_SYS_LIBRARY_PATH])
+m4trace:configure.ac:10: -1- m4_pattern_allow([^LT_SYS_LIBRARY_PATH$])
 m4trace:configure.ac:11: -1- AM_PROG_CC_C_O
-m4trace:configure.ac:11: -1- AC_DEFINE_TRACE_LITERAL([NO_MINUS_C_MINUS_O])
-m4trace:configure.ac:11: -1- m4_pattern_allow([^NO_MINUS_C_MINUS_O$])
-m4trace:configure.ac:11: -1- AH_OUTPUT([NO_MINUS_C_MINUS_O], [/* Define to 1 if your C compiler doesn\'t accept -c and -o together. */
-@%:@undef NO_MINUS_C_MINUS_O])
-m4trace:configure.ac:11: -1- AC_REQUIRE_AUX_FILE([compile])
 m4trace:configure.ac:13: -1- AC_DEFINE_TRACE_LITERAL([HAVE_PORTAUDIO])
 m4trace:configure.ac:13: -1- m4_pattern_allow([^HAVE_PORTAUDIO$])
 m4trace:configure.ac:13: -1- AH_OUTPUT([HAVE_PORTAUDIO], [/* Compile with portaudio support */
@@ -573,23 +574,23 @@ m4trace:configure.ac:15: -1- AC_SUBST([OPENCV_LDFLAGS])
 m4trace:configure.ac:15: -1- AC_SUBST_TRACE([OPENCV_LDFLAGS])
 m4trace:configure.ac:15: -1- m4_pattern_allow([^OPENCV_LDFLAGS$])
 m4trace:configure.ac:16: -1- _m4_warn([obsolete], [The macro `AC_LANG_SAVE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/lang.m4:125: AC_LANG_SAVE is expanded from...
-m4/find_pthread.m4:9: ACX_PTHREAD is expanded from...
+You should run autoupdate.], [../../lib/autoconf/lang.m4:128: AC_LANG_SAVE is expanded from...
+m4/find_pthread.m4:204: ACX_PTHREAD is expanded from...
 configure.ac:16: the top level])
 m4trace:configure.ac:16: -1- _m4_warn([obsolete], [The macro `AC_LANG_C' is obsolete.
 You should run autoupdate.], [../../lib/autoconf/c.m4:72: AC_LANG_C is expanded from...
-m4/find_pthread.m4:9: ACX_PTHREAD is expanded from...
+m4/find_pthread.m4:204: ACX_PTHREAD is expanded from...
 configure.ac:16: the top level])
 m4trace:configure.ac:16: -1- AC_SUBST([acx_pthread_config])
 m4trace:configure.ac:16: -1- AC_SUBST_TRACE([acx_pthread_config])
 m4trace:configure.ac:16: -1- m4_pattern_allow([^acx_pthread_config$])
 m4trace:configure.ac:16: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2687: AC_TRY_LINK is expanded from...
-m4/find_pthread.m4:9: ACX_PTHREAD is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2688: AC_TRY_LINK is expanded from...
+m4/find_pthread.m4:204: ACX_PTHREAD is expanded from...
 configure.ac:16: the top level])
 m4trace:configure.ac:16: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2687: AC_TRY_LINK is expanded from...
-m4/find_pthread.m4:9: ACX_PTHREAD is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2688: AC_TRY_LINK is expanded from...
+m4/find_pthread.m4:204: ACX_PTHREAD is expanded from...
 configure.ac:16: the top level])
 m4trace:configure.ac:16: -1- AC_DEFINE_TRACE_LITERAL([PTHREAD_CREATE_JOINABLE])
 m4trace:configure.ac:16: -1- m4_pattern_allow([^PTHREAD_CREATE_JOINABLE$])
@@ -614,7 +615,7 @@ m4trace:configure.ac:16: -2- AH_OUTPUT([HAVE_PTHREAD], [/* Define if you have PO
 @%:@undef HAVE_PTHREAD])
 m4trace:configure.ac:16: -1- _m4_warn([obsolete], [The macro `AC_LANG_RESTORE' is obsolete.
 You should run autoupdate.], [../../lib/autoconf/lang.m4:134: AC_LANG_RESTORE is expanded from...
-m4/find_pthread.m4:9: ACX_PTHREAD is expanded from...
+m4/find_pthread.m4:204: ACX_PTHREAD is expanded from...
 configure.ac:16: the top level])
 m4trace:configure.ac:17: -1- AC_DEFINE_TRACE_LITERAL([WITH_LIVEREC])
 m4trace:configure.ac:17: -1- m4_pattern_allow([^WITH_LIVEREC$])
