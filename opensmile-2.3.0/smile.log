@@ -1,15 +1,14 @@
-[ 17.11.2017 - 20:09:12 ]
+[ 19.11.2017 - 11:47:51 ]
     (MSG) [2] in SMILExtract : openSMILE starting!
-[ 17.11.2017 - 20:09:12 ]
-    (MSG) [2] in SMILExtract : config file is: config/MFCC12_0_D_A.conf
-[ 17.11.2017 - 20:09:12 ]
+[ 19.11.2017 - 11:47:51 ]
+    (MSG) [2] in SMILExtract : config file is: vad_test.conf
+[ 19.11.2017 - 11:47:51 ]
     (MSG) [2] in cComponentManager : successfully registered 91 component types.
-[ 17.11.2017 - 20:09:12 ]
-    (MSG) [2] in instance 'lldarffsink' : No filename given, disabling this sink component.
-[ 17.11.2017 - 20:09:12 ]
-    (MSG) [2] in cComponentManager : successfully finished createInstances
-                                 (14 component instances were finalised, 1 data memories were finalised)
-[ 17.11.2017 - 20:09:12 ]
-    (MSG) [2] in cComponentManager : starting single thread processing loop
-[ 17.11.2017 - 20:09:12 ]
-    (MSG) [2] in cComponentManager : Processing finished! System ran for 68 ticks.
+[ 19.11.2017 - 11:47:51 ]
+    (ERROR) [0] in commandlineParser : doParse: unknown option '-I' on commandline!
+[ 19.11.2017 - 11:47:51 ]
+    (ERROR) [0] in commandlineParser : doParse: unknown option '-O' on commandline!
+[ 19.11.2017 - 11:47:51 ]
+    (ERROR) [1] in cComponentManager : cannot add component (instname='rp_VAD' type='cRnnProcessor'): unknown component type!!
+[ 19.11.2017 - 11:47:51 ]
+    (ERROR) [1] in cComponentManager : error during addComponent (returnVal=-1)!
