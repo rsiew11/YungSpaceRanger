@@ -87,9 +87,10 @@ def main(args):
         sys.exit(1)
     audio, sample_rate = read_wave(args[1])
     vad = webrtcvad.Vad(int(args[0]))
-    frames = frame_generator(20, audio, sample_rate)
+    frames = frame_generator(10, audio, sample_rate)
     frames = list(frames)
-    segments = vad_collector(sample_rate, 20, 300, vad, frames)
+    segments = vad_collector(sample_rate, 10, 300, vad, frames)
+    #segments = vad_collector(10, 10, 300, vad, frames)
     for i, segment in enumerate(segments):
         path = 'chunk-%002d.wav' % (i,)
         print(' Writing %s' % (path,))
