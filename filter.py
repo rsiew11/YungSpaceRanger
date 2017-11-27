@@ -4,7 +4,7 @@ import numpy as np
 
 # Created input file with:
 # mpg123  -w 20130509talk.wav 20130509talk.mp3
-wr = wave.open('data/testing_data/Matt3-03.wav', 'r')
+wr = wave.open('VAD-python/NoVoice/Drone2_test-05.wav', 'r')
 par = list(wr.getparams()) # Get the parameters from the input.
 # This file is stereo, 2 bytes/sample, 44.1 kHz.
 par[3] = 0 # The number of samples will be set by writeframes.
@@ -13,8 +13,8 @@ par[3] = 0 # The number of samples will be set by writeframes.
 ww = wave.open('filtered-talk.wav', 'w')
 ww.setparams(tuple(par)) # Use the same parameters as the input file.
 
-lowpass = 100 # Remove lower frequencies.
-highpass = 4000 # Remove higher frequencies.
+lowpass = 300 # Remove lower frequencies.
+highpass = 3400 # Remove higher frequencies.
 
 sz = wr.getframerate() # Read and process 1 second at a time.
 c = int(wr.getnframes()/sz) # whole file
