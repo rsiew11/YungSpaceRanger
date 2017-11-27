@@ -1,4 +1,5 @@
 import numpy as np
+np.set_printoptions(threshold=np.nan)
 import scipy.io.wavfile as wf
 import matplotlib.pyplot as plt
 
