@@ -4,7 +4,7 @@ import numpy as np
 
 # Created input file with:
 # mpg123  -w 20130509talk.wav 20130509talk.mp3
-wr = wave.open('VAD-python/NoVoice/Drone2_test-05.wav', 'r')
+wr = wave.open('VAD-python/NoVoice/YTstatic-01.wav', 'r')
 par = list(wr.getparams()) # Get the parameters from the input.
 # This file is stereo, 2 bytes/sample, 44.1 kHz.
 par[3] = 0 # The number of samples will be set by writeframes.
