@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+/home/pi/YungSpaceRanger/hardware/gpsParser && /home/pi/YungSpaceRanger/hardware/recordMics 1 && python /home/pi/YungSpaceRanger/hardware/thermalCameraRead.py && sleep 2 && zip -r pac.zip /home/pi/YungSpaceRanger/hardware/packet
+sleep 15 && /home/pi/YungSpaceRanger/hardware/gpsParser && /home/pi/YungSpaceRanger/hardware/recordMics 1 && python /home/pi/YungSpaceRanger/hardware/thermalCameraRead.py && sleep 2 && zip -r pac.zip /home/pi/YungSpaceRanger/hardware/packet
+sleep 30 && /home/pi/YungSpaceRanger/hardware/gpsParser && /home/pi/YungSpaceRanger/hardware/recordMics 1 && python /home/pi/YungSpaceRanger/hardware/thermalCameraRead.py && sleep 2 && zip -r pac.zip /home/pi/YungSpaceRanger/hardware/packet
+sleep 45 && home/pi/YungSpaceRanger/hardware/gpsParser && /home/pi/YungSpaceRanger/hardware/recordMics 1 && python /home/pi/YungSpaceRanger/hardware/thermalCameraRead.py && sleep 2 && zip -r pac.zip /home/pi/YungSpaceRanger/hardware/packet
+
+
+
+
+
+

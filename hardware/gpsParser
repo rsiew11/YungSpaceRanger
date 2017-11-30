@@ -1,0 +1,10 @@
+#!/bin/bash
+sudo killall gpsd
+sudo gpsd /dev/ttyS0/ -F /var/run/gpsd.sock
+
+cgps -s > /home/pi/YungSpaceRanger/hardware/packet/gpsLocation.txt &
+sleep 2
+pkill cgps
+echo GPS RUNING
+
+
