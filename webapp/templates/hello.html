@@ -1,6 +1,6 @@
 <!doctype html>
 <title>Hello from Flask</title>
-<h1>Hello {{ lat }} {{ lng }}!</h1>
+<h1>Hello {{ coords }}!</h1>
 <h1>Hello, World!</h1>
 <!--  -->
 <!-- <!DOCTYPE html> -->
@@ -28,17 +28,19 @@
     <script>
       var map;
       function initMap() {
-      	var myLatLng = {lat: parseFloat('{{ lat }}'), lng: parseFloat('{{ lng }}')};
       	var name = '{{ name }}';
+        var coords = '{{ coords }}';
         map = new google.maps.Map(document.getElementById('map'), {
-          center: myLatLng,
+            center: {lat: parseFloat(coords[0][0]), lng: parseFloat(coords[0][1])},
           zoom: 8
         });
-        var marker = new google.maps.Marker({
-          position: myLatLng,
-          map: map,
-          title: name
-        });
+        /*coords.map( function(coordinates) {
+            var marker = new google.maps.Marker({
+                position: {lat: parseFloat(coordinates[0]), lng: parseFloat(coordinates[1])};
+                map: map,
+                title: name
+            });
+        });*/
       }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIH9DCONND1rIUs7zwONivoY2r0DWE2_A&callback=initMap"

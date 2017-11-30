@@ -4,4 +4,14 @@ from flask import render_template
 
 @app.route('/')
 def hello():
-    return render_template('hello.html', lat=-25.363, lng=131.044)
+    gps_coords = []
+    with open('../run/detected_gps_coords.txt', 'r') as open_file:
+        for line in open_file.readlines():
+            line = line.strip('\n')
+            line = line.strip()
+            coords = line.split(',')
+            lat_coord = coords[0]
+            lng_coord = coords[1]
+            gps_coords.append([lat_coord, lng_coord])
+
+    return render_template('hello.html', coords=gps_coords)
