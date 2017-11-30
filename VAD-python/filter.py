@@ -3,6 +3,7 @@ import numpy as np
 # compatibility with Python 3
 
 # Created input file with:
+
 # mpg123  -w 20130509talk.wav 20130509talk.mp3
 wr = wave.open('YesVoice/Drone3_test-03.wav', 'r')
 par = list(wr.getparams()) # Get the parameters from the input.

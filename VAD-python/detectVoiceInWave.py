@@ -13,9 +13,9 @@ if __name__ == "__main__":
     parser.add_argument('outputfile', metavar='OUTPUTFILE',
                         help='the full path to output json file to save detected speech intervals')
     args = parser.parse_args()
-    
+
     v = VoiceActivityDetector(args.inputfile)
     raw_detection = v.detect_speech()
     speech_labels = v.convert_windows_to_readible_labels(raw_detection)
-    
+
     save_to_file(speech_labels, args.outputfile)

@@ -1,7 +1,7 @@
 <!doctype html>
 <title>Hello from Flask</title>
-<h1>Hello {{ lat }} {{ lng }}!</h1>
-<h1>Hello, World!</h1>
+<h1>Hello, Space Ranger!</h1>
+<h2> Here are the coordinates of the latest humans found: {{ coords }} </h2>
 <!--  -->
 <!-- <!DOCTYPE html> -->
 <html>
@@ -27,17 +27,28 @@
     <div id="map"></div>
     <script>
       var map;
+
+      var decodeHtmlEntity = function(str) {
+            return str.replace(/&#(\d+);/g, function(match, dec) {
+                    return String.fromCharCode(dec);
+              });
+      };
       function initMap() {
-      	var myLatLng = {lat: parseFloat('{{ lat }}'), lng: parseFloat('{{ lng }}')};
       	var name = '{{ name }}';
+        var coords = JSON.parse(decodeHtmlEntity('{{ coords }}'));
+        console.log(coords);
+        console.log(coords[0]);
+        console.log(coords[0][0]);
         map = new google.maps.Map(document.getElementById('map'), {
-          center: myLatLng,
-          zoom: 8
+            center: {lat: parseFloat(coords[0][0]), lng: parseFloat(coords[0][1])},
+          zoom: 16
         });
-        var marker = new google.maps.Marker({
-          position: myLatLng,
-          map: map,
-          title: name
+        coords.map( function(coordinates) {
+            var marker = new google.maps.Marker({
+                position: {lat: parseFloat(coordinates[0]), lng: parseFloat(coordinates[1])},
+                map: map,
+                title: name
+            });
         });
       }
     </script>
