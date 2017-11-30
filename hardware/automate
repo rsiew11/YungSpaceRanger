@@ -1,10 +1,25 @@
 #!/bin/bash
 
+GPS=$(/home/pi/YungSpaceRanger/hardware/gpsParser)
+MIC=$(/home/pi/YungSpaceRanger/hardware/recordMics 1)
+CAM=$(/home/pi/YungSpaceRanger/hardware/thermalCameraRead.py)
 
-/home/pi/YungSpaceRanger/hardware/gpsParser && /home/pi/YungSpaceRanger/hardware/recordMics 1 && python /home/pi/YungSpaceRanger/hardware/thermalCameraRead.py && sleep 1 && zip -r pac.zip /home/pi/YungSpaceRanger/hardware/packet && python /home/pi/YungSpaceRanger/hardware/serverFileTransfer.py
-sleep 15 && /home/pi/YungSpaceRanger/hardware/gpsParser && /home/pi/YungSpaceRanger/hardware/recordMics 1 && python /home/pi/YungSpaceRanger/hardware/thermalCameraRead.py && sleep 1 && zip -r pac.zip /home/pi/YungSpaceRanger/hardware/packet && python /home/pi/YungSpaceRanger/hardware/serverFileTransfer.py
-sleep 30 && /home/pi/YungSpaceRanger/hardware/gpsParser && /home/pi/YungSpaceRanger/hardware/recordMics 1 && python /home/pi/YungSpaceRanger/hardware/thermalCameraRead.py && sleep 1 && zip -r pac.zip /home/pi/YungSpaceRanger/hardware/packet && python /home/pi/YungSpaceRanger/hardware/serverFileTransfer.py
-sleep 45 && home/pi/YungSpaceRanger/hardware/gpsParser && /home/pi/YungSpaceRanger/hardware/recordMics 1 && python /home/pi/YungSpaceRanger/hardware/thermalCameraRead.py && sleep 1 && zip -r pac.zip /home/pi/YungSpaceRanger/hardware/packet && python /home/pi/YungSpaceRanger/hardware/serverFileTransfer.py
+for time in 15 30 45
+do
+    echo $GPS
+    echo $MIC
+    echo $CAM
+    sleep 1
+    zip -r pac.zip packet
+    sleep $time
+done
+
+rm -rf home/
+
+#/home/pi/YungSpaceRanger/hardware/gpsParser && /home/pi/YungSpaceRanger/hardware/recordMics 1 && python /home/pi/YungSpaceRanger/hardware/thermalCameraRead.py && sleep 1 && zip -r pac.zip packet
+#sleep 15 && /home/pi/YungSpaceRanger/hardware/gpsParser && /home/pi/YungSpaceRanger/hardware/recordMics 1 && python /home/pi/YungSpaceRanger/hardware/thermalCameraRead.py && sleep 1 && zip -j  -r pac.zip packet
+#sleep 30 && /home/pi/YungSpaceRanger/hardware/gpsParser && /home/pi/YungSpaceRanger/hardware/recordMics 1 && python /home/pi/YungSpaceRanger/hardware/thermalCameraRead.py && sleep 1 && zip -j -r pac.zip packet
+#sleep 45 && home/pi/YungSpaceRanger/hardware/gpsParser && /home/pi/YungSpaceRanger/hardware/recordMics 1 && python /home/pi/YungSpaceRanger/hardware/thermalCameraRead.py && sleep 1 && zip -j -r pac.zip packet
 
 
 
