@@ -1,16 +1,21 @@
 # server.py
 
 import socket                   # Import socket module
+import time
+
+
 
 port = 60001                    # Reserve a port for your service.
 s = socket.socket()             # Create a socket object
-host = '192.168.1.29'     # Get local machine name
+host = '128.237.244.81'     # Get local machine name
 s.bind((host, port))            # Bind to the port
 s.listen(5)                     # Now wait for client connection.
 
 
 s.settimeout(7)   #set the timeout to be 7 seconds so that the script terminates
 print 'Server listening....'
+
+
 
 while True:
     conn, addr = s.accept()     # Establish connection with client.
@@ -27,8 +32,13 @@ while True:
             l = f.read(1024)
         f.close()
 
-    print('Done sending')
+    print('Done sending waiting for next packet')
     #conn.send('Thank you for connecting')
+
+    #sleep for 14 seconds to wait for next new packet
+    #time.sleep(10)
+
+    print('closed connection')
     conn.close()
     break
 
