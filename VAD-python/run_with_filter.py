@@ -45,5 +45,5 @@ def main(wave_file, txt_output):
 
 if __name__ == "__main__":
 	if (len(sys.argv) != 3):
-		print('COMMAND FORMAT: python run.py input.wav output.txt')
+		print('COMMAND FORMAT: python run_with_filter.py input.wav output.txt')
 	main(sys.argv[1], sys.argv[2])
