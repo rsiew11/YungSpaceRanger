@@ -10,8 +10,8 @@ def hello():
             line = line.strip('\n')
             line = line.strip()
             coords = line.split(',')
-            lat_coord = coords[0]
-            lng_coord = coords[1]
+            lat_coord = float(coords[0])
+            lng_coord = float(coords[1])
             gps_coords.append([lat_coord, lng_coord])
 
     return render_template('hello.html', coords=gps_coords)
