@@ -7,22 +7,22 @@ echo MICRECORDING
 
 if [ "$1" = "1" ]
 then
-    arecord --device=hw:1,0 --format S16_LE --duration 1 --rate 44100 -c1 /home/pi/YungSpaceRanger/hardware/packet/noises/noise0.wav
+    arecord --device=hw:1,0 --format S16_LE --duration 3 --rate 44100 -c1 /home/pi/YungSpaceRanger/hardware/packet/noise0.wav
 elif [ "$1" = "2" ]
 then
-    arecord --device=hw:1,0 --format S16_LE --duration 1 --rate 44100 -c1 packet/noises/noise0.wav
-    arecord --device=hw:2,0 --format S16_LE --duration 1 --rate 44100 -c1 packet/noises/noise1.wav
+    arecord --device=hw:1,0 --format S16_LE --duration 3 --rate 44100 -c1 packet/noises/noise0.wav
+    arecord --device=hw:2,0 --format S16_LE --duration 3 --rate 44100 -c1 packet/noises/noise1.wav
 elif [ "$1" = "3" ]
 then
-    arecord --device=hw:1,0 --format S16_LE --duration 1 --rate 44100 -c1 packet/noises/noise0.wav
-    arecord --device=hw:2,0 --format S16_LE --duration 1 --rate 44100 -c1 packet/noises/noise1.wav
-    arecord --device=hw:3,0 --format S16_LE --duration 1 --rate 44100 -c1 packet/noises/noise2.wav
+    arecord --device=hw:1,0 --format S16_LE --duration 3 --rate 44100 -c1 packet/noises/noise0.wav
+    arecord --device=hw:2,0 --format S16_LE --duration 3 --rate 44100 -c1 packet/noises/noise1.wav
+    arecord --device=hw:3,0 --format S16_LE --duration 3 --rate 44100 -c1 packet/noises/noise2.wav
 elif [ "$1" = "4" ]
 then
-    arecord --device=hw:1,0 --format S16_LE --duration 1 --rate 44100 -c1 packet/noises/noise0.wav
-    arecord --device=hw:2,0 --format S16_LE --duration 1 --rate 44100 -c1 packet/noises/noise1.wav
-    arecord --device=hw:3,0 --format S16_LE --duration 1 --rate 44100 -c1 packet/noises/noise2.wav
-    arecord --device=hw:4,0 --format S16_LE --duration 1 --rate 44100 -c1 packet/noises/noise3.wav
+    arecord --device=hw:1,0 --format S16_LE --duration 3 --rate 44100 -c1 packet/noises/noise0.wav
+    arecord --device=hw:2,0 --format S16_LE --duration 3 --rate 44100 -c1 packet/noises/noise1.wav
+    arecord --device=hw:3,0 --format S16_LE --duration 3 --rate 44100 -c1 packet/noises/noise2.wav
+    arecord --device=hw:4,0 --format S16_LE --duration 3 --rate 44100 -c1 packet/noises/noise3.wav
 else
     echo "$1 has to be b/t 1 and 4"
 fi
