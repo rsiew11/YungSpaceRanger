@@ -3,17 +3,20 @@ import sys
 import wave
 import numpy as np
 
+import os #for noise reduction
+
 human_temp_threshold = 25.0
 
 def parse_voice_array(voice_array):
-    avg_sum = 0
-    voice_sum = 0
-    num_elements = len(voice_array)
-    for element in voice_array:
-        voice_sum += int(element[1])
-    if (voice_sum):
-        return 1
-    return 0
+	#print(voice_array)
+	avg_sum = 0
+	voice_sum = 0
+	num_elements = len(voice_array)
+	for element in voice_array:
+		voice_sum += int(element[1])
+	if (voice_sum):
+		return 1
+	return 0
 
 def perform_bandpass(wave_file):
     # Created input file with:
@@ -24,7 +27,7 @@ def perform_bandpass(wave_file):
     par[3] = 0 # The number of samples will be set by writeframes.
 
     # Open the output file
-    filtered_wave = '/Users/namritamurali/Documents/Documents - Nams MBP/CMU F17/18500/YungSpaceRanger/VAD-python/filtered_file.wav'
+    filtered_wave = 'filtered_file.wav'
     ww = wave.open(filtered_wave, 'w')
     ww.setparams(tuple(par)) # Use the same parameters as the input file.
 
@@ -48,12 +51,19 @@ def perform_bandpass(wave_file):
     ww.close()
     return wave_file
 
+def denoise(wave_file):
+	os.system('./sox ' + wave_file + ' cleaned.wav noisered InDomain/test3.noise-profile 0.3')
+	return 'cleaned.wav'
+
 def human_voice_detect(wave_file):
-    # band pass filter
-    perform_bandpass(wave_file)
-    v = VoiceActivityDetector(wave_file)
-    array = v.detect_speech()
-    return parse_voice_array(array.tolist())
+	# noise reduction
+	denoised_wave = denoise(wave_file)
+	# band pass filter
+	perform_bandpass(denoised_wave)
+	v = VoiceActivityDetector('filtered_file.wav')
+	array = v.detect_speech()
+	#print array
+	return parse_voice_array(array.tolist())
 
 def human_temp_detect(ir_file):
     with open(ir_file, 'r') as open_file:
@@ -69,15 +79,13 @@ def human_temp_detect(ir_file):
     return 0
 
 if __name__ == "__main__":
-    if (len(sys.argv) != 3) :
-        print('COMMAND FORMAT: python human_detect.py input.wav input.txt')
-
-    wave_file = str(sys.argv[1])
-    ir_file = str(sys.argv[2])
-
-    if (human_voice_detect(wave_file) and human_temp_detect(ir_file)):
-        print 1
-    else:
-        print 0
+	if (len(sys.argv) != 3):
+		print('COMMAND FORMAT: python human_detect.py input.wav input.txt')
+	wave_file = str(sys.argv[1])
+	ir_file = str(sys.argv[2])
+	if human_voice_detect(wave_file):
+		print 1
+	else:
+		print 0
 
 
