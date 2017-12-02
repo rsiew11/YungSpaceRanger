@@ -1,6 +1,6 @@
 import os
-#from human_detect import human_voice_detect
-from human_detect_2 import human_voice_detect
+from human_detect import human_voice_detect
+#from human_detect_2 import human_voice_detect
 import sys
 
 if __name__ == "__main__":
