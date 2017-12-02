@@ -1,5 +1,7 @@
 import os
-import human_detect
+#from human_detect import human_voice_detect
+from human_detect_2 import human_voice_detect
+import sys
 
 if __name__ == "__main__":
     if (len(sys.argv) != 2):
@@ -8,7 +10,11 @@ if __name__ == "__main__":
     output_file = str(sys.argv[1])
     f = open(output_file, 'w+')
     
-    for file in os.listdir('/Users/albinakwak/Documents/YungSpaceRanger/VAD-python/InDomain/Yesvoice'):
-        #f.write(file + ": " + human_detect(file) + '\n')
+    directory = '/Users/albinakwak/Documents/YungSpaceRanger/VAD-python/InDomain/NoVoice/'
+    for file in os.listdir(directory):
+        if ".wav" not in file:
+            continue
+        print(os.path.join(directory, file))
+        f.write(file + ": " + str(human_voice_detect(os.path.join(directory,file))) + '\n')
     
     f.close()
