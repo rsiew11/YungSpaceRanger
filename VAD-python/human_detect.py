@@ -52,7 +52,13 @@ def perform_bandpass(wave_file):
     return wave_file
 
 def denoise(wave_file):
-	os.system('./sox ' + wave_file + ' cleaned.wav noisered InDomain/test3.noise-profile 0.3')
+	# do not delete:
+	# trial and error BEST COMBO: 0.5 volume & 0.3 noise reduction
+
+	#os.system('./sox -v 0.5 ' + wave_file + ' vol_decr.wav') # lower the volume of audio by 50%
+	#os.system('./sox vol_decr.wav cleaned.wav noisered InDomain/test3.noise-profile 0.3') # subtract drone buzz
+	
+	os.system('./sox ' + wave_file + ' cleaned.wav noisered InDomain/test3.noise-profile 0.3') # subtract drone buzz
 	return 'cleaned.wav'
 
 def human_voice_detect(wave_file):
