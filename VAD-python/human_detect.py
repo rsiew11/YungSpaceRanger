@@ -55,11 +55,11 @@ def denoise(wave_file):
     # do not delete:
     # trial and error BEST COMBO FOR test3.wav: 0.5 volume & 0.3 noise reduction
     # trying for test4.wav 0.7, 0.25
-    os.system('../VAD-python/./sox -v 0.5 ' + wave_file + ' ../VAD-python/vol_decr.wav') # lower the volume of audio by 50%
-    os.system('../VAD-python/./sox ../VAD-python/vol_decr.wav ../VAD-python/cleaned.wav ../VAD-python/noisered ../VAD-python/InDomain/test4.noise-profile 0.3') # subtract drone buzz
+    os.system('./sox -v 0.5 ' + wave_file + ' vol_decr.wav') # lower the volume of audio by 50%
+    os.system('./sox vol_decr.wav cleaned.wav noisered InDomain/test4.noise-profile 0.3') # subtract drone buzz
 
     #os.system('./sox ' + wave_file + ' cleaned.wav noisered InDomain/test3.noise-profile 0.3') # subtract drone buzz
-    return '../VAD-python/cleaned.wav'
+    return 'cleaned.wav'
 
 def human_voice_detect(wave_file):
     # noise reduction

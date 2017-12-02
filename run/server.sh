@@ -19,7 +19,9 @@ do
     #scp packet/noise0.wav test_data/$new_file
     ################## VAD CLASSIFIER ON WAVE FILE  #########################
     # The packet is located within 'packet/'
-    human_detected=$(python ../VAD-python/human_detect.py packet/noise0.wav packet/thermalData.txt)
+    cd ../VAD-python
+    human_detected=$(python human_detect.py ../run/packet/noise0.wav ../run/packet/thermalData.txt)
+    cd ../run/
     echo "HUMAN DETECTED ? "$human_detected
 
     # Display the GPS coordinates of the human voice found
