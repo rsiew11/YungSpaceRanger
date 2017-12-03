@@ -14,9 +14,9 @@ do
     sudo nc -l 22 > pac.zip
     unzip -o pac.zip
 
-    #var=$((var + 1))
-    #new_file="noise"$var".wav"
-    #scp packet/noise0.wav test_data/$new_file
+    var=$((var + 1))
+    new_file="noise"$var".wav"
+    scp packet/noise0.wav test_data/$new_file
     ################## VAD CLASSIFIER ON WAVE FILE  #########################
     # The packet is located within 'packet/'
     cd ../VAD-python

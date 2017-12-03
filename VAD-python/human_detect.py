@@ -5,7 +5,7 @@ import numpy as np
 
 import os #for noise reduction
 
-human_temp_threshold = 25.0
+human_temp_threshold = 9.0
 
 def parse_voice_array(voice_array):
     #print(voice_array)
@@ -94,7 +94,7 @@ if __name__ == "__main__":
         print('COMMAND FORMAT: python human_detect.py input.wav input.txt')
     wave_file = str(sys.argv[1])
     ir_file = str(sys.argv[2])
-    if human_voice_detect(wave_file):
+    if human_voice_detect(wave_file) or human_temp_detect(ir_file):
         print 1
     else:
         print 0
