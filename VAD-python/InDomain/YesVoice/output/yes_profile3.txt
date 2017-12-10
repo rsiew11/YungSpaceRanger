@@ -1,0 +1,15 @@
+drone_shout.wav: 1
+test3_full_vol-01.wav: 1
+test3_full_vol-02.wav: 1
+test3_full_vol-03.wav: 1
+test3_full_vol-04.wav: 1
+test3_full_vol-05.wav: 1
+test3_full_vol-06.wav: 0
+test3_full_vol-07.wav: 1
+test3_full_vol-08.wav: 1
+test3_shout.wav: 1
+test4_full_vol-01.wav: 0
+test4_full_vol-02.wav: 0
+test4_full_vol-03.wav: 0
+test4_full_vol-04.wav: 0
+test4_full_vol-05.wav: 0

@@ -1,0 +1,9 @@
+noise04.wav: 0
+noise05.wav: 1
+noise06.wav: 0
+noise08.wav: 0
+noise09.wav: 1
+noise10.wav: 0
+noise12.wav: 0
+noise13.wav: 1
+noise14.wav: 1
